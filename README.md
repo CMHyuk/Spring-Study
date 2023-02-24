@@ -88,7 +88,7 @@ canWrite()가 호출되어 요청 데이터와 마찬가지로 클래스 타입,
 클라이언트에서 HTTP 요청을 서버에 보내면, 스프링의 디스패처 서블릿이 이를 받아 해당 요청을 처리할 컨트롤러를 선택합니다. 컨트롤러는 요청을 처리하고 결과를 반환합니다. 이때, 컨트롤러에서 예외가 발생하면, @ExceptionHandler 어노테이션이 지정된 메서드가 해당 예외를 처리하게 됩니다.
 
 ## @RestControllerAdvice
-@RestControllerAdvice를 사용하면 정상 코드와 예외 코드 분리가 가능합니다.
+@RestControllerAdvice 사용하면 정상 코드와 예외 코드 분리가 가능합니다.
 
 ## 서블릿 필터 vs 인터셉터
 
@@ -132,3 +132,11 @@ Spring에서 @Transactional 어노테이션은 여러 개의 옵션을 가지고
 * readOnly : 트랜잭션이 읽기 전용인 경우 true로 설정할 수 있습니다. 이 경우 데이터베이스에서 성능을 개선할 수 있습니다.
 * rollbackFor : 특정 예외가 발생하면 트랜잭션을 롤백하도록 설정할 수 있습니다.
 * noRollbackFor : 특정 예외가 발생하더라도 트랜잭션을 롤백하지 않도록 설정할 수 있습니다.
+
+## @NotNull @NotEmpty @NotBlank
+@NotNull 은 이름 그대로 Null만 허용하지 않습니다.
+따라서, "" 이나 " " 은 허용하게 됩니다.
+
+@NotEmpty 는 null 과 "" 둘 다 허용하지 않게 합니다.
+
+@NotBlank 는 null 과 "" 과 " " 모두 허용하지 않습니다.
