@@ -140,3 +140,13 @@ Spring에서 @Transactional 어노테이션은 여러 개의 옵션을 가지고
 @NotEmpty 는 null 과 "" 둘 다 허용하지 않게 합니다.
 
 @NotBlank 는 null 과 "" 과 " " 모두 허용하지 않습니다.
+
+## 타입 컨버터
+### 컨버전 서비스
+WebMvcConfigurer의 addFormatters를 이용해 사용 가능 합니다.
+
+### 포맷터
+* @NumberFormat : 숫자 관련 형식 지정 포맷터 사용, NumberFormatAnnotationFormatterFactory 
+* @DateTimeFormat : 날짜 관련 형식 지정 포맷터 사용, Jsr310DateTimeFormatAnnotationFormatterFactory
+
+메시지 컨버터( HttpMessageConverter )에는 컨버전 서비스가 적용되지 않습니다.
